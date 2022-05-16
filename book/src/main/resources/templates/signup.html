@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet"
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		  crossorigin="anonymous">
+</head>
+<body>
+<!--<h1 layout:fragment="header">Location : Edit</h1>-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- Brand -->
+	<a class="navbar-brand" href="#">Reservation : View All</a>
+</nav>
+
+		<form action="/book/signup" method="POST">
+			<label>Username
+				<input name="username">
+			</label>
+			<br/>
+			<label>Password
+				<input name="password">
+			</label>
+			<br/>
+			<label>Repeat Your Password
+				<input name="rePassword">
+			</label>
+			<br/>
+			<input type="submit" value="Submit">
+		</form>
+
+<a href="/book/login">Already Have An Account?</a>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet"
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		  crossorigin="anonymous">
+</head>
+<body>
+<!--<h1 layout:fragment="header">Location : Edit</h1>-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- Brand -->
+	<a class="navbar-brand" href="#">Reservation : List</a>
+</nav>
+<div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Customer Username</td>
+					<td>Location Address</td>
+					<td>Location Id</td>
+					<td>Booking Date</td>
+					<td>Create Time</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${reservations.empty}">
+					<td colspan="4">No reservations</td>
+				</tr>
+				<tr th:each="reservation : ${reservations}">
+					<td><a href="reservation/1" th:href="${reservation.id}"
+						th:text="${reservation.id}">1</a></td>
+					<td
+						th:text="${reservation.user.username}">
+						用户id</td>
+					<td
+							th:text="${reservation.location.id}">
+						位置id</td>
+					<td
+							th:text="${reservation.location.address}">
+						位置id</td>
+					<td
+							th:text="${#dates.format(reservation.bookTime, 'yyyy-MM-dd')}">
+						预约时间</td>
+					<td
+							th:text="${#dates.format(reservation.createTime, 'yyyy-MM-dd')}">
+						创建时间</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+<a href="/book/create">To Reserve</a>
+<br/>
+</body>
+</html>

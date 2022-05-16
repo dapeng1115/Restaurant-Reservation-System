@@ -1,0 +1,14 @@
+com\demo\location\mapper\DishMapper.class
+com\demo\location\model\po\Dish$DishBuilder.class
+com\demo\location\mapper\LocationMapper.class
+com\demo\location\controller\DishController.class
+com\demo\location\service\ILocationService.class
+com\demo\location\LocationApplication.class
+com\demo\location\service\IDishService.class
+com\demo\location\model\po\Dish.class
+com\demo\location\controller\LocationController.class
+com\demo\location\service\impl\DishServiceImpl.class
+com\demo\location\service\impl\LocationServiceImpl.class
+com\demo\location\model\po\Location$LocationBuilder.class
+com\demo\location\feignService\BookFeignService.class
+com\demo\location\model\po\Location.class

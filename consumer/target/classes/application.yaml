@@ -1,0 +1,84 @@
+swagger:
+  enabled: true
+  base-package: com.demo.consumer.controller
+  title: api文档
+  description: api文档
+  contact:
+    name: 马思骏
+    email: masijun99@gmail.com
+  ui-config:
+    doc-expansion: list
+  license: Apache 2.0
+  license-url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0
+  authorization:
+    key-name: AUTH_TOKEN
+    name: 用户登陆的Token
+
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+
+# MYSQL
+spring:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://192.168.1.6:7712/dev?serverTimezone=US/Eastern
+    hikari:
+      username: root
+      password: root
+      minimum-idle: 4 #最小空闲连接数
+      idle-timeout: 120000 #空闲连接最长闲置时间，2分钟
+      maximum-pool-size: 64 #最大的连接数
+      auto-commit: false #关闭事务自动提交
+      max-lifetime: 1800000 #池中连接的最长时间
+      connection-timeout: 300000 #连接超时时间30s
+      connection-test-query: SELECT 1 #心跳测试语句
+  thymeleaf:
+    cache: false
+  kafka:
+    listener:
+      missing-topics-fatal: false
+      ack-mode: MANUAL
+    consumer:
+      group-id: writer
+      value-deserializer: com.demo.consumer.config.ConsumerDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+# 你的卡夫卡 没起来
+
+
+#对应的mybatis plus的配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/gitee/sunchenbin/mybatis/actable/mapping/*/*.xml
+  type-aliases-package: com.demo.consumer.entity
+  type-handlers-package: com.mblog.core.handler
+  global-config:
+    db-config: #设置逻辑删除
+      logic-delete-field: deleted
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+#mybatis自动建表配置
+actable:
+  table:
+    auto: add
+  model:
+    pack: com.demo.consumer.entity
+  database:
+    type: mysql
+
+m-auth:
+  pattern: /api/**
+  token:
+    key: AUTH_TOKEN
+
+

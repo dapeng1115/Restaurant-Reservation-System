@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+<!--    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">-->
+<!--    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>-->
+<!--    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment-with-locales.js"></script>-->
+<!--    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>-->
+</head>
+<body>
+<!--<h1 layout:fragment="header">Location : Edit</h1>-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Reservation : Edit</a>
+</nav>
+<div class="card-body">
+    <div th:each="locations, date:${locationMap}">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>Date</td>
+                <td>Loction ID</td>
+                <td>Address</td>
+                <td>Seat One</td>
+                <td>Seat Two</td>
+                <td>Seat Three</td>
+                <td>Seat Four</td>
+                <td>Seat Five</td>
+                <td>Seat Six</td>
+                <td>Seat Seven</td>
+                <td>Seat Eight</td>
+                <td>Seat Nine</td>
+                <td>Seat Ten</td>
+            </tr>
+            <tr th:each="location : ${locations.getValue()}">
+                <td th:text="${#dates.format(locations.getKey(), 'yyyy-MM-dd')}"
+                >
+                    Date
+                </td>
+                <td
+                        th:text="${location.id}">
+                    location Id
+                </td>
+                <td
+                        th:text="${location.address}">
+                    address
+                </td>
+                <td
+                        th:text="${location.seatOne}">
+                    1
+                </td>
+                <td
+                        th:text="${location.seatTwo}">
+                    2
+                </td>
+                <td
+                        th:text="${location.seatThree}">
+                    3
+                </td>
+                <td
+                        th:text="${location.seatFour}">
+                    4
+                </td>
+                <td
+                        th:text="${location.seatFive}">
+                    5
+                </td>
+                <td
+                        th:text="${location.seatSix}">
+                    6
+                </td>
+                <td
+                        th:text="${location.seatSeven}">
+                    7
+                </td>
+                <td
+                        th:text="${location.seatEight}">
+                    8
+                </td>
+                <td
+                        th:text="${location.seatNine}">
+                    9
+                </td>
+                <td
+                        th:text="${location.seatTen}">
+                    10
+                </td>
+                <br/>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div>
+    <div class="card-body">
+        <form th:action="@{./create}" th:object="${book}" method="POST">
+            <div class="form-group">
+                <input
+                        type="hidden"
+                        name="id"
+                        th:field="*{id}"
+                />
+            </div>
+            <div class="form-group">
+                <label> type </label>
+                <select type="text" name="type" id="cars">
+                    <option th:field="*{type}" value="1">One</option>
+                    <option th:field="*{type}" value="2">Two</option>
+                    <option th:field="*{type}" value="3">Three</option>
+                    <option th:field="*{type}" value="4">Four</option>
+                    <option th:field="*{type}" value="5">Five</option>
+                    <option th:field="*{type}" value="6">Six</option>
+                    <option th:field="*{type}" value="7">Seven</option>
+                    <option th:field="*{type}" value="8">Eight</option>
+                    <option th:field="*{type}" value="9">Nine</option>
+                    <option th:field="*{type}" value="10">Ten</option>
+                </select>
+<!--                <input-->
+<!--                        type="text"-->
+<!--                        name="type"-->
+<!--                        th:field="*{type}"-->
+<!--                        class="form-control"-->
+<!--                        placeholder="Enter Address-->
+<!--                />-->
+            </div>
+            <div class="form-group">
+                <label> location id </label>
+                <input
+                        type="text"
+                        name="locationId"
+                        th:field="*{locationId}"
+                        class="form-control"
+                        placeholder="Enter Address"
+                />
+            </div>
+            <div class="form-group">
+                <label> reserve date </label>
+                <input
+                        type="text"
+                        name="locationId"
+                        th:field="*{bookTime}"
+                        class="form-control"
+                        placeholder="Enter Address"
+                />
+            </div>
+
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

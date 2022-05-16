@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Texas Hamburger Company</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Texas Hamburger Company</a>
+
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Preview New Location </h1>
+            <div class="card-body">
+                <form th:action="@{/location/dish}" th:object="${dish}" method="POST">
+                    <div class="form-group">
+                        <input
+                                type="hidden"
+                                name="id"
+                                th:field="*{id}"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label> Name </label>
+                        <input
+                                type="text"
+                                name="address"
+                                th:field="*{name}"
+                                class="form-control"
+                                placeholder="Dish Name"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Price </label>
+                        <input
+                            type="text"
+                            name="address"
+                            th:field="*{price}"
+                            class="form-control"
+                            placeholder="Dish Address"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Location Id </label>
+                        <input
+                            type="text"
+                            name="address"
+                            th:field="*{locationId}"
+                            class="form-control"
+                            placeholder="Location Id"
+                        />
+                    </div>
+
+
+                    <div class="row">
+                        <button type="submit" name="id" formaction="/location/dish" th:method="GET"
+                                class="btn btn-default">Add Dish
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

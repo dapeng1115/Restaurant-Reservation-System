@@ -1,0 +1,6 @@
+com\demo\consumer\mapper\ConsumerMapper.class
+com\demo\consumer\config\ConsumerKafkaListener.class
+com\demo\consumer\ConsumerApplication.class
+com\demo\consumer\entity\Book$BookBuilder.class
+com\demo\consumer\entity\Book.class
+com\demo\consumer\config\ConsumerDeserializer.class

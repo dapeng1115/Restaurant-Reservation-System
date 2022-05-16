@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<!--<h1 layout:fragment="header">Location</h1>-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Locations</a>
+</nav>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <tbody>
+        <tr th:if="${locations.empty}">
+            <td colspan="4">No Location</td>
+        </tr>
+        <tr th:each="location : ${locations}">
+            <td><a th:href="@{/location/{id}(id=${location.id})}"
+                   th:text="${location.id}">1</a></td>
+            <td>
+                <span th:href="${location.address}"
+                      th:text="${location.address}">1</span>
+            </td>
+            <td>
+            <form th:action="'/location/edit/'+${location.id}" th:method="get">
+                 <input type="submit" value="edit" class="btn btn-link"/>
+            </form>
+                <form th:action="'/location/delete/'+${location.id}" th:method="delete">
+                    <input type="submit" value="delete" class="btn btn-link"/>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="/location/form.html">Add Location</a>
+        </div>
+    </div>
+</div>
+<script src="./jq.js"></script>
+
+</body>
+</html>

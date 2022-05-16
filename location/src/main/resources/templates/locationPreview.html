@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Texas Hamburger Company</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Texas Hamburger Company</a>
+</nav>
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Preview Location </h1>
+            <div class="card-body">
+                <form th:action="@{/create}" th:object="${location}" method="POST">
+                    <div class="form-group">
+                        <input
+                                type="hidden"
+                                name="id"
+                                th:field="*{id}"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label> Address </label>
+                        <input
+                                type="text"
+                                name="address"
+                                th:field="*{address}"
+                                class="form-control"
+                                placeholder="Enter Address"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Monday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourMon}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Tuesday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourTue}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Wednesday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourWed}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Thursday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourThur}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Friday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourFri}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Saturday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourSat}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Open Hour: Sunday </label>
+                        <input
+                                type="text"
+                                name="openHours"
+                                th:field="*{openHourSun}"
+                                class="form-control"
+                                placeholder="Enter Open Hour"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 1 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatOne}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 2 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatTwo}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 3 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatThree}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 4 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatFour}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 5 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatFive}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 6 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatSix}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 7 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatSeven}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 8 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatEight}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 9 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatNine}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Seat Size: 10 </label>
+                        <input
+                                type="text"
+                                name="seat"
+                                th:field="*{seatTen}"
+                                class="form-control"
+                                placeholder="Enter Seat Size"
+                        />
+                    </div>
+
+                </form>
+
+                    <div class="row" th:each="dish: ${location.dish}">
+                        <div class="col-xs-2" th:text="${dish.id}">1</div>
+                        <div class="col-xs-2">
+                            <input type="text"
+                                   th:value="${dish.name}"/>
+                        </div>
+                        <div class="col-xs-2">
+                            <input type="text"
+                                   th:value="${dish.price}"/>
+                        </div>
+                        <form th:action="'/location/dish/delete/'+${dish.id}" th:method="delete">
+                            <input type="submit" value="delete" class="btn btn-link"/>
+                        </form>
+                    </div>
+
+                <div class="row">
+                    <a name="id" th:href="'/location/dish/add/' + ${location.id}" th:method="GET"
+                       class="btn btn-default">Add Dish
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

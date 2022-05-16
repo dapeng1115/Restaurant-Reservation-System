@@ -1,0 +1,20 @@
+server:
+  port: 8080
+---
+spring:
+  application:
+    name: consumer
+---
+spring:
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 192.168.1.6:8848
+        namespace: f0df41f8-10ac-41d6-b349-ed57c1eb9560
+      config:
+        # 配置中心地址
+        server-addr: 192.168.1.6:8848
+        # 配置文件格式
+        namespace: f0df41f8-10ac-41d6-b349-ed57c1eb9560
+        group: dev
